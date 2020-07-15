@@ -8,6 +8,8 @@ import { DebugElement } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RoomOccupancyModel} from './models/RoomOccupancyModel'
 import { by } from 'protractor';
+
+
 describe('MainContentComponent', () => {
   let comp: MainContentComponent;
   let fixture: ComponentFixture<MainContentComponent>;
