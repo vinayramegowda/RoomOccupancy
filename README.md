@@ -7,6 +7,13 @@ Our hotel clients have two different categories of rooms: Business and Economy. 
 Please build a small app that provides an interface for hotels to enter the numbers of Business and Economy rooms that are available for the night and then tells them immediately how many rooms of each category will be occupied and how much money they will make in total. Potential guests are represented by an array of numbers that is their willingness to pay for the night. This input data can be in a json file.	
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
+## Versioning
+
+- Angular CLI: 10.0.1
+- Node: 12.16.1
+- OS: win32 x64
+- Angular 8
+
 ## To run the Application
 
 Run 'npm install' in your command prompt after traversing to the downloaded folder or forked folder. Use 'code .' to open it on Visual studio code upon traversing to its folder.
