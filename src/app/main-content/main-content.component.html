@@ -1,0 +1,66 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+    <h1>
+      {{title}}!!
+    </h1>
+    <form [formGroup]="angForm" novalidate>
+          <div class="form-group">
+            <label class="center-block">Business Rooms:</label>
+              <input [(ngModel)]='brooms' class="form-control" formControlName="brooms" type="text">
+          </div>
+          <div *ngIf="angForm.controls['brooms'].invalid && (angForm.controls['brooms'].dirty || angForm.controls['brooms'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['brooms'].errors.required">
+              Business rooms field cannot be left empty.
+            </div>
+            <div *ngIf="angForm.controls['brooms'].errors.pattern">
+                Please enter only integers
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="center-block">Economy Rooms:</label>
+                <input [(ngModel)]='erooms' class="form-control" formControlName="erooms" type="text">
+              
+          </div>
+          
+          <div *ngIf="angForm.controls['erooms'].invalid && (angForm.controls['erooms'].dirty || angForm.controls['erooms'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['erooms'].errors.required">
+                Economy rooms field cannot be left empty.
+          </div>
+          <div *ngIf="angForm.controls['erooms'].errors.pattern">
+            Please enter only integers
+          </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <button [disabled]="!angForm.valid" class="btn btn-success" (click)="onSubmitCalculateRoomOccupancy()">Calculate</button>
+        </div>
+    </form>
+
+  </div>
+  <div>
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="models && models.length > 0">
+      <thead>
+        <tr>
+          <th>FreeBusinessRooms</th>
+          <th>UsageBusiness</th>
+          <th>BusinessTotalPrice</th>
+          <th>FreeEconomyRooms</th>
+          <th>UsageEconomy</th>
+          <th>EconomyTotalPrice</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let model of models">
+          <td>{{ model.FreeBusinessRooms }}</td>
+          <td>{{ model.UsageBusiness }}</td>
+          <td>{{ model.UsageBusinessPrice }}</td>
+          <td>{{ model.FreeEconomyRooms }}</td>
+          <td>{{ model.UsageEconomy }}</td>
+          <td>{{ model.UsageEconomyPrice }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+
+  </div>
